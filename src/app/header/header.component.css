@@ -1,0 +1,8 @@
+.selected {
+    color: blue;
+}
+
+.display>div {
+    display: inline;
+    cursor: pointer;
+}
