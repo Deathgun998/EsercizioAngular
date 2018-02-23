@@ -10,6 +10,8 @@ import { ComunicatorService } from './comunicator.service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DemoRouterModule } from './router/router.module';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginService } from './login.service';
 
 
 @NgModule({
@@ -18,14 +20,15 @@ import { DemoRouterModule } from './router/router.module';
     ListComponent,
     DetailComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     DemoRouterModule
   ],
-  providers: [ListService,ComunicatorService],
+  providers: [ListService,ComunicatorService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
