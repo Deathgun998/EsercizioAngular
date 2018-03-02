@@ -7,6 +7,9 @@ export class LoginService {
   public mySubject$ = this.mySubject.asObservable();
   changeSubject(value: boolean) { 
     this.mySubject.next(value); 
+    if(value==true)
+    sessionStorage.setItem("logged","true");
+    else
+    sessionStorage.setItem("logged","false");
   }
-
 }

@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { DemoRouterModule } from './router/router.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginService } from './login.service';
+import { ControllaService } from './controlla.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { LoginService } from './login.service';
     FormsModule,
     DemoRouterModule
   ],
-  providers: [ListService,ComunicatorService, LoginService],
+  providers: [ListService,ComunicatorService, LoginService,ControllaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

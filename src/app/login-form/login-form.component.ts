@@ -18,8 +18,10 @@ export class LoginFormComponent implements OnInit {
     var password = e.target.elements[1].value;
     
     if(username == 'admin' && password == 'admin'){
+    
       this.loginService.changeSubject(true);
       this.router.navigate(['/home']);
+     
     }
   }
 }
