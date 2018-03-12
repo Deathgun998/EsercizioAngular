@@ -17,8 +17,8 @@ export class ListComponent {
   items: Nuovofile[] ;
 
  constructor(private router: Router, private listService: ListService){
-
- }
+   
+}
 
 ngOnInit() {
   this.items = this.listService.getNuovofile();

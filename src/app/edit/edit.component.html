@@ -1,13 +1,30 @@
 <div>
     <input type="text" placeholder="cerca" [(ngModel)]="inputValue" />
     <button (click)="cerca()">Cerca</button>
-    <div *ngIf="currentNuovofile">
-
-        ID: {{currentNuovofile?.id}}<br> titolo: <input placeholder="tipo" id="tipo" [(ngModel)]="currentNuovofile.tipo" />
+    <div *ngIf="game">
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <div class="form-group">
+                <label for="tipo">name </label>
+                <input type="text" class="form-control" id="tipo" required [(ngModel)]="game.name" name="name" #nameVar="ngModel">
+                <div [hidden]="nameVar.valid || nameVar.pristine" class="alert alert-danger">tipo is required</div>
+            </div>
+            <div class="form-group">
+                <label for="tipoe">description </label>
+                <input type="text" class="form-control" id="tipoe" required [(ngModel)]="game.description" name="description" #descriptionVar="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="tipoes">genre </label>
+                <input type="number" class="form-control" id="tipoes" required [(ngModel)]="game.genre" name="genre" #genreVar="ngModel">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+            <button type="button" class="btn btn-default" (click)="modifica(); heroForm.reset()">Modifica</button>
+        </form>
+        <!--  ID: {{currentNuovofile?.id}}<br> titolo: <input placeholder="tipo" id="tipo" [(ngModel)]="currentNuovofile.tipo" />
         <br> descrizione: <input placeholder="tipoe" id="tipoe" [(ngModel)]="currentNuovofile.tipoe" />
         <br> genere: <input placeholder="tipoes" id="tipoes" [(ngModel)]="currentNuovofile.tipoes" />
         <br>
-        <button (click)="modifica()">Modifica</button>
+        <button (click)="modifica()">Modifica</button>-->
 
     </div>
+
 </div>

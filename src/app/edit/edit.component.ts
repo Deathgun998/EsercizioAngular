@@ -14,14 +14,14 @@ import { Nuovofile } from '../nuovofile';
 })
 export class EditComponent {
 
-  games: Nuovofile[] = [];
+  game: Nuovofile;
   inputValue: string = "";
   currentNuovofile: Nuovofile;
   currentId: string;
   hasChanges: boolean = false;
   
   constructor(private listGames: ListService, private router: Router) {
-    this.games = listGames.getNuovofile();
+    this.game = listGames.getNuovofileById(1);
     router.events.subscribe(event => {
     });
   }
@@ -36,8 +36,8 @@ export class EditComponent {
     this.listGames.setGame(this.currentNuovofile);
   }
 
-  ngOnInit() {
-
+  onSubmit() {
+    console.log("game values: "+JSON.stringify(this.game))
   }
 
 }

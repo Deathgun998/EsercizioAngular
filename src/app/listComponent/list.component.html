@@ -1,6 +1,6 @@
 <div *ngFor="let item of items; let i=index" (click)="cliccami(item)">
-    <div>{{item.tipo}}</div>
-    <div>{{item.tipoe}}</div>
-    <div>{{item.tipoes}}</div>
+    <div>{{item.name}}</div>
+    <div>{{item.description}}</div>
+    <div>{{item.genre}}</div>
     <div *ngIf="i!=items.length-1">-------------------</div>
 </div>

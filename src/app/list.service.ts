@@ -13,16 +13,16 @@ return this.items;
 getNuovofileById(id:number): Nuovofile{
     for(let nuovofile of this.items)
         if(nuovofile.id==id)
-        return nuovofile;
+        return this.clone(nuovofile);
     return null;
 }
 clone(item: Nuovofile){
-    return new Nuovofile(item.id, item.tipo, item.tipoe, item.tipoes);
+    return new Nuovofile(item.id, item.description, item.name, item.genre);
   }
   getGameByTIPO(tipo: string): Nuovofile {
     for(let item of this.items)
     {
-      if(item.tipo == tipo)
+      if(item.description == tipo)
       {
         return item;
         
@@ -36,9 +36,9 @@ clone(item: Nuovofile){
     {
       if(item2.id == item.id)
       {
-        item2.tipo = item.tipo;
-        item2.tipoe = item.tipoe;
-        item2.tipoes = item.tipoes; 
+        item2.description = item.description;
+        item2.name = item.name;
+        item2.genre = item.genre; 
        
         alert("modificato");
       }
@@ -49,7 +49,7 @@ clone(item: Nuovofile){
     let found: boolean = false;
     for(let item of this.items)
     {
-      if(item.tipo == tipo)
+      if(item.description == tipo)
       {
         found = true;
         
