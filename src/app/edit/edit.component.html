@@ -1,0 +1,13 @@
+<div>
+    <input type="text" placeholder="cerca" [(ngModel)]="inputValue" />
+    <button (click)="cerca()">Cerca</button>
+    <div *ngIf="currentNuovofile">
+
+        ID: {{currentNuovofile?.id}}<br> titolo: <input placeholder="tipo" id="tipo" [(ngModel)]="currentNuovofile.tipo" />
+        <br> descrizione: <input placeholder="tipoe" id="tipoe" [(ngModel)]="currentNuovofile.tipoe" />
+        <br> genere: <input placeholder="tipoes" id="tipoes" [(ngModel)]="currentNuovofile.tipoes" />
+        <br>
+        <button (click)="modifica()">Modifica</button>
+
+    </div>
+</div>

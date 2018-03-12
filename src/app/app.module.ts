@@ -13,6 +13,8 @@ import { DemoRouterModule } from './router/router.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginService } from './login.service';
 import { ControllaService } from './controlla.service';
+import { EditComponent } from './edit/edit.component';
+import { Controlla2Service } from './controlla2.service';
 
 
 @NgModule({
@@ -22,14 +24,15 @@ import { ControllaService } from './controlla.service';
     DetailComponent,
     HeaderComponent,
     HomeComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     DemoRouterModule
   ],
-  providers: [ListService,ComunicatorService, LoginService,ControllaService],
+  providers: [ListService,ComunicatorService, LoginService,ControllaService,Controlla2Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,6 +10,8 @@ export class AppComponent {
     logged: boolean = false;
 
     constructor(private loginService: LoginService){
+      this.logged = sessionStorage.getItem("logged") && sessionStorage.getItem("logged") === "true";
+
       this.loginService.mySubject$.subscribe(logged =>{
         this.logged = logged;
       })
